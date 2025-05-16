@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:root {
+  --primary: #1e3a8a;
+  --secondary: #3b82f6;
+  --light-bg: #f8fafc;
+  --dark-text: #0f172a;
+  --light-text: #f1f5f9;
+  --font: 'Inter', 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--light-bg);
+  color: var(--dark-text);
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark-text);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--primary);
+}
+
+.hero {
+  background: linear-gradient(to bottom right, var(--primary), var(--secondary));
+  color: var(--light-text);
+  padding: 9rem 2rem 5rem;
+  text-align: center;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+}
+
+.section {
+  padding: 5rem 2rem;
+  max-width: 960px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease-out;
+}
+
+.section.fade-in.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-download {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 1rem;
+  user-select: none;
+}
+
+.btn-download:hover,
+.btn-download:focus {
+  background: var(--secondary);
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.5);
+  outline: none;
+}
+
+#skills {
+  background: #eff6ff;
+  border-radius: 30px;
+}
+
+#experience {
+  background: #e0f2fe;
+  border-radius: 30px;
+}
+
+#projects {
+  background: #dbeafe;
+  border-radius: 30px;
+}
+
+#contact {
+  background: #f1f5f9;
+  border-radius: 30px;
+}
+
+h2 {
+  color: var(--primary);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, .experience {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.skills-list li {
+  padding: 0.3rem 0;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  background: #e2e8f0;
+  color: var(--primary);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    width: 220px;
+    display: none;
+    padding: 1rem;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links a {
+    padding: 0.75rem 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
